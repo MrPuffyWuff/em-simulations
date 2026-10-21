@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dh8i4nu7satgy"]
+
+[ext_resource type="PackedScene" uid="uid://br8joglkm75vj" path="res://particle_2d/electron.tscn" id="1_502km"]
+
+[node name="CoulombLaw" type="Node2D" unique_id=166589664]
+
+[node name="Electron" parent="." unique_id=192675461 instance=ExtResource("1_502km")]
+position = Vector2(142, 133)
