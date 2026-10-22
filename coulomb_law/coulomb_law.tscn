@@ -1,8 +1,29 @@
 [gd_scene format=3 uid="uid://dh8i4nu7satgy"]
 
-[ext_resource type="PackedScene" uid="uid://br8joglkm75vj" path="res://particle_2d/electron.tscn" id="1_502km"]
+[ext_resource type="PackedScene" uid="uid://br8joglkm75vj" path="res://particle_2d/particle2D.tscn" id="1_502km"]
+[ext_resource type="Texture2D" uid="uid://boviqt8tj05s5" path="res://assets/New Piskel.png" id="1_m7oni"]
+[ext_resource type="Resource" uid="uid://but0gxmof084f" path="res://particle_2d/basic_neg.tres" id="3_fc6hu"]
+[ext_resource type="Resource" uid="uid://cab07m4quqsvu" path="res://particle_2d/basic_poz.tres" id="4_p5ys0"]
 
 [node name="CoulombLaw" type="Node2D" unique_id=166589664]
 
-[node name="Electron" parent="." unique_id=192675461 instance=ExtResource("1_502km")]
-position = Vector2(142, 133)
+[node name="Background" type="TextureRect" parent="." unique_id=2056220352]
+modulate = Color(0.22403929, 0.22403929, 0.22403929, 1)
+offset_right = 960.0
+offset_bottom = 540.0
+texture = ExtResource("1_m7oni")
+stretch_mode = 1
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1175837159]
+color = Color(0, 0, 0, 1)
+
+[node name="Electron2D" parent="." unique_id=433688664 instance=ExtResource("1_502km")]
+position = Vector2(409, 253)
+stats = ExtResource("3_fc6hu")
+freeze_position = true
+freeze_velocity = true
+freeze_acceleration = true
+
+[node name="Electron2D2" parent="." unique_id=477299399 instance=ExtResource("1_502km")]
+position = Vector2(455, 276)
+stats = ExtResource("4_p5ys0")
