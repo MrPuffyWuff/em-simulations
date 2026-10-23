@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://rruu68n7xy4o"]
+
+[ext_resource type="Script" uid="uid://bl0r35hr5nuga" path="res://particle_2d/force_vector.gd" id="1_h62yy"]
+
+[node name="ForceVector" type="Node2D" unique_id=1093391979]
+script = ExtResource("1_h62yy")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=75070948]
+points = PackedVector2Array(0, 0, 100, 0)

@@ -2,6 +2,16 @@
 
 [ext_resource type="Script" uid="uid://cmeb3iwsafg56" path="res://particle_2d/particle2D.gd" id="1_hyjhp"]
 [ext_resource type="Texture2D" uid="uid://b7ujw6ipt43wj" path="res://assets/particles.png" id="1_me6dh"]
+[ext_resource type="PackedScene" uid="uid://rruu68n7xy4o" path="res://particle_2d/force_vector.tscn" id="3_coea8"]
+
+[sub_resource type="Gradient" id="Gradient_coea8"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.42352942, 0.84705883, 0.92156863, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_coea8"]
+gradient = SubResource("Gradient_coea8")
+width = 8
+height = 8
 
 [sub_resource type="Gradient" id="Gradient_hyjhp"]
 offsets = PackedFloat32Array(0.1478946, 1)
@@ -15,8 +25,19 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
 
-[node name="Electron2D" type="CharacterBody2D" unique_id=433688664]
+[node name="Particle2D" type="CharacterBody2D" unique_id=433688664]
 script = ExtResource("1_hyjhp")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=270202869]
+z_index = -11
+amount = 300
+texture = SubResource("GradientTexture2D_coea8")
+lifetime = 3.0
+preprocess = 7.95
+gravity = Vector2(0, 0)
+
+[node name="ForceVector" parent="." unique_id=1093391979 instance=ExtResource("3_coea8")]
+z_index = -10
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1144750124]
 texture = ExtResource("1_me6dh")
@@ -24,4 +45,5 @@ region_enabled = true
 region_rect = Rect2(0, 0, 48, 48)
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1383321072]
+blend_mode = 2
 texture = SubResource("GradientTexture2D_55d6i")
